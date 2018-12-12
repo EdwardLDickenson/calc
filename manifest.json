@@ -1,10 +1,9 @@
 {
-
   "manifest_version": 2,
-  "name": "Quicknote",
-  "version": "1.1",
+  "name": "ffcalc",
+  "version": "1.0",
 
-  "description": "Allows the user to make quick notes by clicking a button and entering text into the resulting popup. The notes are saved in storage. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#quicknote",
+  "description": "A barebones calculator extension for FireFox",
   "icons": {
     "48": "icons/quicknote-48.png"
   },
@@ -15,10 +14,10 @@
 
   "browser_action": {
     "default_icon": {
-     "32" : "icons/quicknote-32.png"
+     "32" : "icons/ffcalc-32.png"
     },
-    "default_title": "Quicknote",
-    "default_popup": "popup/quicknote.html"
+    "default_title": "ffcalc",
+    "default_popup": "popup/ffcalc.html"
   },
 
   "applications": {
@@ -26,5 +25,4 @@
       "id": "quicknote-example@mozilla.org"
     }
   }
-
 }
