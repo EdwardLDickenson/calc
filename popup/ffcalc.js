@@ -47,6 +47,8 @@ document.onkeydown = function downEvent(e)
 	if(e.keyCode == 8)
 	{
 		backInput();
+
+		e.preventDefault();
 	}
 
 	//	'=' key
@@ -55,19 +57,25 @@ document.onkeydown = function downEvent(e)
 		inputEquals();
 	}
 
+	//	')' key combination
+	else if(e.shiftKey && e.keyCode == 48)
+	{
+		inputRightParenthesis();
+	}
+
 	//	'0' key
 	else if(e.keyCode == 48)
 	{
 		inputZero();
 	}
 
-	//	'!' operator
+	//	'!' key combination
 	else if(e.shiftKey && e.keyCode == 49)
 	{
 		inputFactorial();
 	}
 
-	//	This is the '*' character.  Key combinations have to located before
+	//	'*' key combination
 	else if(e.shiftKey && e.keyCode == 56)
 	{
 		inputMultiply();
@@ -79,9 +87,16 @@ document.onkeydown = function downEvent(e)
 		inputAdd();
 	}
 
+	//	'^' key combination
 	else if(e.shiftKey && e.keyCode == 54)
 	{
 		inputExponent();
+	}
+
+	//	'(' key combination
+	else if(e.shiftKey && e.keyCode == 57)
+	{
+		inputLeftParenthesis();
 	}
 
 	//	'1'	key
@@ -150,76 +165,92 @@ document.onkeydown = function downEvent(e)
 		clearInput();
 	}
 
+	//	numpad '0'
 	else if(e.keyCode == 96)
 	{
 		inputZero();
 	}
 
+	//	numpad '1'
 	else if(e.keyCode == 97)
 	{
 		inputOne();
 	}
 
+	//	numpad '2'
 	else if(e.keyCode == 98)
 	{
 		inputTwo();
 	}
 
+	//	numpad '3'
 	else if(e.keyCode == 99)
 	{
 		inputThree();
 	}
 
+	//	numpad '4'
 	else if(e.keyCode == 100)
 	{
 		inputFour();
 	}
 
+	//	numpad '5'
 	else if(e.keyCode == 101)
 	{
 		inputFive();
 	}
 
+	//	numpad '6'
 	else if(e.keyCode == 102)
 	{
 		inputSix();
 	}
 
+	//	numpad '7'
 	else if(e.keyCode == 103)
 	{
 		inputSeven();
 	}
 
+	//	numpad '8'
 	else if(e.keyCode == 104)
 	{
 		inputEight();
 	}
 
+	//	numpad '9'
 	else if(e.keyCode == 105)
 	{
 		inputNine();
 	}
 
+	//	numpad '*'
 	else if(e.keyCode == 106)
 	{
 		inputMultiply();
 	}
 
+	//	numpad '.'
 	else if(e.keyCode == 110)
 	{
 		inputDecimal();
 	}
 
+	//	numpad '/'
 	else if(e.keyCode == 111)
 	{
+		e.preventDefault();
 		inputDivide();
 	}
 
+	//	numpad '+'
 	else if(e.keyCode == 107)
 	{
 		inputAdd();
 	}
 
+	//	numpad '-'
 	else if(e.keyCode == 109)
 	{
 		inputSubtract();
@@ -240,6 +271,7 @@ document.onkeydown = function downEvent(e)
 	//	'/' key
 	else if(e.keyCode == 191)
 	{
+		e.preventDefault();
 		inputDivide();
 	}
 }

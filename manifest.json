@@ -1,28 +1,27 @@
 {
-  "manifest_version": 2,
-  "name": "ffcalc",
-  "version": "1.0",
+	"manifest_version": 2,
+	"name": "ffcalc",
+	"version": "1.0",
 
-  "description": "A barebones calculator extension for FireFox",
-  "icons": {
-    "48": "icons/quicknote-48.png"
-  },
+	"description": "A calculator extension for FireFox",
+	"icons": {
+		"48": "icons/ffcalc-48.png"
+	},
 
-  "permissions": [
-    "storage"
-  ],
+	"permissions": [
+	],
 
-  "browser_action": {
-    "default_icon": {
-     "32" : "icons/ffcalc-32.png"
-    },
-    "default_title": "ffcalc",
-    "default_popup": "popup/ffcalc.html"
-  },
+	"browser_action": {
+		"default_icon": {
+			"32" : "icons/ffcalc-32.png"
+		},
+		"default_title": "ffcalc",
+		"default_popup": "popup/ffcalc.html"
+	},
 
-  "applications": {
-    "gecko": {
-      "id": "quicknote-example@mozilla.org"
-    }
-  }
+	"applications": {
+		"gecko": {
+			"id": "quicknote-example@mozilla.org"
+		}
+	}
 }

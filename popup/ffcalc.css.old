@@ -3,6 +3,8 @@ body{
 	font-size: 100%;
 
 	background-color: #222222;
+
+	display: grid;
 }
 
 button.smallButton{
@@ -35,7 +37,7 @@ button.doubleWidthButton{
 	border: 2px solid #4488ff;
 	border-radius: 8px;
 
-	/*width: 4ch;*/
+	width: 4ch;
 }
 
 button.doubleHeightButton{
@@ -50,13 +52,7 @@ button.doubleHeightButton{
 	border: 2px solid #4488ff;
 	border-radius: 8px;
 
-	/*height: 4ch;*/
-}
-
-div.gridContainer{
-	display: grid;
-	grid-template-columns: auto auto auto;
-	grid-gap: 10px;
+	height: 4ch;
 }
 
 div.firstSingleCell{
@@ -66,25 +62,23 @@ div.firstSingleCell{
 	padding-top: 1%;
 }
 
-.item1{
-	/*float: left;*/
+div.singleCell{
+	float: left;
 
-	/*padding-left: 1%;
-	padding-top: 1%;*/
-
+	padding-left: 1%;
+	padding-top: 1%;
 }
 
 div.tallCell{
-	/*float: left;*/
+	float: left;
 
-	/*padding-left: 1%;
+	padding-left: 1%;
 	padding-top: 1%;
-	padding-bottom: 0;*/
+	padding-bottom: 0;
 }
 
 div.tallCell + div.singleCell{
-	padding-top: 0;
-	background-color: red;
+	
 }
 
 .calcDisplay{
