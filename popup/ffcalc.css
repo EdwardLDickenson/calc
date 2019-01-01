@@ -5,7 +5,7 @@ body{
 	background-color: #222222;
 }
 
-button.smallButton{
+div.smallButton{
 	font-family: monospace;
 	font-size: 400%;
 
@@ -20,12 +20,7 @@ button.smallButton{
 	margin-top: 20%;
 }
 
-/*	Remove the dotted border of a clicked button*/
-button.smallButton::-moz-focus-inner{
-	border: 0;
-}
-
-button.doubleWidthButton{
+div.doubleWidthButton{
 	font-family: monospace;
 	font-size: 400%;
 
@@ -38,11 +33,36 @@ button.doubleWidthButton{
 	border-radius: 8px;
 	
 	margin-top: 20%;
-
-	/*width: 4ch;*/
 }
 
-button.doubleHeightButton{
+div.wide5th{
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 5;
+	grid-column-end: 7;
+	
+	height: 100%
+	
+	font-family: monospace;
+	font-size: 400%;
+
+	text-align: center;
+
+	color: #4488ff;
+	background-color: #222222;
+
+	border: 2px solid #4488ff;
+	border-radius: 8px;
+	
+	margin-top: 10%;
+}
+
+div.tall4th{
+	grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 4;
+	grid-column-end: 4;
+	
 	font-family: monospace;
 	font-size: 400%;
 
@@ -55,16 +75,33 @@ button.doubleHeightButton{
 	border-radius: 8px;
 	
 	margin-top: 20%;
+}
 
-	/*height: 4ch;*/
+div.wide3rd{
+	grid-row-start: 4;
+	grid-row-end: 4;
+	grid-column-start: 3;
+	grid-column-end: 5;
+	
+	font-family: monospace;
+	font-size: 400%;
+
+	text-align: center;
+
+	color: #4488ff;
+	background-color: #222222;
+
+	border: 2px solid #4488ff;
+	border-radius: 8px;
+	
+	margin-top: 10%;
 }
 
 div.gridContainer{	
 	display: grid;
-	grid-template-columns: 8ch 8ch 8ch 8ch 8ch;
+	/*grid-template-columns: auto auto auto auto auto auto;*/
+	grid-template-columns: 8ch 8ch 8ch 8ch 8ch 8ch 8ch;
 	grid-gap: .1%;
-	
-	
 }
 
 div.firstSingleCell{
@@ -72,14 +109,6 @@ div.firstSingleCell{
 	float: left;
 
 	padding-top: 1%;
-}
-
-.item1{
-	/*float: left;*/
-
-	/*padding-left: 1%;
-	padding-top: 1%;*/
-
 }
 
 div.tallCell{
@@ -95,10 +124,10 @@ div.tallCell + div.singleCell{
 	background-color: red;
 }
 
+/*	I tried to add a 7-segment font to use in the display.*/
 .calcDisplay{
 	font-family: monospace;
-
-
+	
 	color: #222222;
 	background-color: #4488ff;
 
@@ -108,7 +137,7 @@ div.tallCell + div.singleCell{
 
 	text-align: right;
 
-	width: 16ch;
+	width: 16.05ch;
 	height: 2ch;
 
 	/*Overflow?*/

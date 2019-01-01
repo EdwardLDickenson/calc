@@ -34,7 +34,11 @@ window.onload = function(){
 	document.getElementById("main.keyboard.exponent").addEventListener("mousedown", inputExponent);
 	document.getElementById("main.keyboard.leftParenthesis").addEventListener("mousedown", inputLeftParenthesis);
 	document.getElementById("main.keyboard.rightParenthesis").addEventListener("mousedown", inputRightParenthesis);
-
+	document.getElementById("main.keyboard.root").addEventListener("mousedown", inputRoot);
+	document.getElementById("main.keyboard.pi").addEventListener("mousedown", inputPi);
+	document.getElementById("main.keyboard.mod").addEventListener("mousedown", inputMod);
+	document.getElementById("main.keyboard.root").addEventListener("mousedown", inputRoot);
+	
 	setInterval(cleanString, 250);
 
 	display = document.getElementById("main.display");
@@ -434,8 +438,9 @@ function inputEquals()
 	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
 }
 
+//	Replacing '/' with '÷' will take a bit more work since the parser doesn't understand '÷'
 function inputDivide()
-{
+{	
 	display.textContent += "/";
 	invertButtonColor(document.getElementById("main.keyboard.divide"));
 
@@ -479,6 +484,42 @@ function inputExponent()
 	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
 }
 
+function inputRoot()
+{
+	display.textContent += "√";
+	invertButtonColor(document.getElementById("main.keyboard.root"));
+
+	var id = "main.keyboard.root";
+	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+}
+
+function inputPi()
+{
+	display.textContent += "Π";
+	invertButtonColor(document.getElementById("main.keyboard.pi"));
+
+	var id = "main.keyboard.pi";
+	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+}
+
+function inputMod()
+{
+	display.textContent += "%";
+	invertButtonColor(document.getElementById("main.keyboard.mod"));
+
+	var id = "main.keyboard.mod";
+	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+}
+
+function inputRoot()
+{
+	display.textContent += "√";
+	invertButtonColor(document.getElementById("main.keyboard.root"));
+
+	var id = "main.keyboard.root";
+	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+}
+
 function inputLeftParenthesis()
 {
 	display.textContent += "(";
@@ -515,6 +556,9 @@ function cleanString()
 
 
 //	TODO:
+//	The root doesn't work without changing √ to sqrt() for the parser.
 //
 //
 //
+
+
