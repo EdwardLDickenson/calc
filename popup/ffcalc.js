@@ -1,5 +1,6 @@
 var display;
 var fadeTime = 800;
+var	pi = 3.14;
 
 window.onload = function(){
 	console.log("Onload event");
@@ -174,6 +175,11 @@ document.onkeydown = function downEvent(e)
 		clearInput();
 	}
 
+	else if(e.keyCode == 80)
+	{
+		inputPi();
+	}
+	
 	//	numpad '0'
 	else if(e.keyCode == 96)
 	{
@@ -425,7 +431,18 @@ function inputZero()
 
 function inputEquals()
 {
-	var result = math.eval(display.textContent);
+	var parsedDisplay = display.textContent;
+	parsedDisplay = parsedDisplay.replace("Π", "(3.14)");	//	Double pi ΠΠ doesn't work because replace all hasn't been implemented
+	
+	if(parsedDisplay.includes("√"))
+	{
+		parsedDisplay = parsedDisplay.replace("√", "sqrt(");
+		parsedDisplay = parsedDisplay + ")"
+		
+		console.log(parsedDisplay);
+	}
+	
+	var result = math.eval(parsedDisplay);
 
 	if(result == "Infinity")
 	{
