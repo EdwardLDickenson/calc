@@ -66,6 +66,11 @@ document.onkeydown = function downEvent(e)
 	{
 		inputRightParenthesis();
 	}
+	
+	else if(e.shiftKey && e.keyCode == 53)
+	{
+		inputMod();
+	}
 
 	//	'0' key
 	else if(e.keyCode == 48)
@@ -543,7 +548,7 @@ function cleanString()
 	var display = document.getElementById("main.display");
 
 	//	Not necessary?
-	display.innerHTML = display.innerHTML.replace(/[a-zA-Z\[\]\{\} ,~`@#$%&_?;|\\]/g, '');
+	display.innerHTML = display.innerHTML.replace(/[a-zA-Z\[\]\{\} ,~`@#$&_?;|\\]/g, '');
 
 	//	This eliminates any double operators like ++ or //.  Factorial is intentionally omitted because double factorials are a thing
 	display.textContent = display.textContent.replace(/[+]{2,}/g, '+');
@@ -551,6 +556,7 @@ function cleanString()
 	display.textContent = display.textContent.replace(/[*]{2,}/g, '*');
 	display.textContent = display.textContent.replace(/[/]{2,}/g, '/');
 	display.textContent = display.textContent.replace(/[.]{2,}/g, '.');
+	display.textContent = display.textContent.replace(/[%]{2,}/g, '%');
 }
 
 
