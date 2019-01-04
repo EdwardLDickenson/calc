@@ -323,133 +323,119 @@ function resetButtonColor(button)
 function inputOne()
 {
 	display.textContent += "1";
-	invertButtonColor(document.getElementById("main.keyboard.one"));
+	invertButtonColor(document.getElementById(ondId));
 
-	var id = "main.keyboard.one";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(oneId))}, fadeTime);
 }
 
 function inputTwo()
 {
 	display.textContent += "2";
-	invertButtonColor(document.getElementById("main.keyboard.two"));
+	invertButtonColor(document.getElementById(twoId));
 
-	var id = "main.keyboard.two";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(twoId))}, fadeTime);
 }
 
 function inputThree()
 {
 	display.textContent += "3";
-	invertButtonColor(document.getElementById("main.keyboard.three"));
+	invertButtonColor(document.getElementById(threeId));
 
-	var id = "main.keyboard.three";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(threeId))}, fadeTime);
 }
 
 function inputAdd()
 {
 	display.textContent += "+";
-	invertButtonColor(document.getElementById("main.keyboard.add"));
+	invertButtonColor(document.getElementById(addId));
 
-	var id = "main.keyboard.add";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(AddId))}, fadeTime);
 }
 
 function inputFour()
 {
 	display.textContent += "4";
-	invertButtonColor(document.getElementById("main.keyboard.four"));
+	invertButtonColor(document.getElementById(fourId));
 
-	var id = "main.keyboard.four";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(fourId))}, fadeTime);
 }
 
 function inputFive()
 {
 	display.textContent += "5";
-	invertButtonColor(document.getElementById("main.keyboard.five"));
+	invertButtonColor(document.getElementById(fiveId));
 
-	var id = "main.keyboard.five";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(fiveId))}, fadeTime);
 }
 
 function inputSix()
 {
 	display.textContent += "6";
-	invertButtonColor(document.getElementById("main.keyboard.six"));
+	invertButtonColor(document.getElementById(sixId));
 
-	var id = "main.keyboard.six";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(sixId))}, fadeTime);
 }
 
 function inputSubtract()
 {
 	display.textContent += "-";
-	invertButtonColor(document.getElementById("main.keyboard.subtract"));
+	invertButtonColor(document.getElementById(subtractId));
 
-	var id = "main.keyboard.subtract";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(subtractId))}, fadeTime);
 }
 
 function inputSeven()
 {
 	display.textContent += "7";
-	invertButtonColor(document.getElementById("main.keyboard.seven"));
+	invertButtonColor(document.getElementById(sevenId));
 
-	var id = "main.keyboard.seven";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(sevenId))}, fadeTime);
 }
 
 function inputEight()
 {
 	display.textContent += "8";
-	invertButtonColor(document.getElementById("main.keyboard.eight"));
+	invertButtonColor(document.getElementById(eightId));
 
-	var id = "main.keyboard.eight";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(eightId))}, fadeTime);
 }
 
 function inputNine()
 {
 	display.textContent += "9";
-	invertButtonColor(document.getElementById("main.keyboard.nine"));
+	invertButtonColor(document.getElementById(nineId));
 
-	var id = "main.keyboard.nine";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(nineId))}, fadeTime);
 }
 
 function inputMultiply()
 {
 	display.textContent += "*";
-	invertButtonColor(document.getElementById("main.keyboard.multiply"));
+	invertButtonColor(document.getElementById(multiplyId));
 
-	var id = "main.keyboard.multiply";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(multiplyId))}, fadeTime);
 }
 
 function inputDecimal()
 {
 	display.textContent += ".";
-	invertButtonColor(document.getElementById("main.keyboard.decimal"));
+	invertButtonColor(document.getElementById(decimalId));
 
-	var id = "main.keyboard.decimal";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(decimalId))}, fadeTime);
 }
 
 function inputZero()
 {
 	display.textContent += "0";
-	invertButtonColor(document.getElementById("main.keyboard.zero"));
+	invertButtonColor(document.getElementById(zeroId));
 
-	var id = "main.keyboard.zero";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(zeroId))}, fadeTime);
 }
 
 function inputEquals()
 {
 	var parsedDisplay = display.textContent;
-	parsedDisplay = parsedDisplay.replace(/Π/g, "(3.14)");	//	Double pi ΠΠ doesn't work because replace all hasn't been implemented
+	parsedDisplay = parsedDisplay.replace(/Π/g, "(3.14)");
 	
 	if(parsedDisplay.includes("√"))
 	{
@@ -471,110 +457,98 @@ function inputEquals()
 		display.textContent = result;
 	}
 
-	invertButtonColor(document.getElementById("main.keyboard.equals"));
+	invertButtonColor(document.getElementById(equalsId));
 
-	var id = "main.keyboard.equals";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(equalsId))}, fadeTime);
 }
 
 //	Replacing '/' with '÷' will take a bit more work since the parser doesn't understand '÷'
 function inputDivide()
 {	
 	display.textContent += "/";
-	invertButtonColor(document.getElementById("main.keyboard.divide"));
+	invertButtonColor(document.getElementById(divideId));
 
-	var id = "main.keyboard.divide";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(divideId))}, fadeTime);
 }
 
 function clearInput()
 {
 	display.textContent = "";
-	invertButtonColor(document.getElementById("main.keyboard.clear"));
+	invertButtonColor(document.getElementById(clearId));
 
-	var id = "main.keyboard.clear";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(clearId))}, fadeTime);
 }
 
 function backInput()
 {
 	display.textContent = display.textContent.substring(0, display.textContent.length - 1)
-	invertButtonColor(document.getElementById("main.keyboard.back"));
+	invertButtonColor(document.getElementById(backId));
 
-	var id = "main.keyboard.back";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(backId))}, fadeTime);
 }
 
 function inputFactorial()
 {
 	display.textContent += "!";
-	invertButtonColor(document.getElementById("main.keyboard.factorial"));
+	invertButtonColor(document.getElementById(factorialId));
 
-	var id = "main.keyboard.factorial";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(factorialId))}, fadeTime);
 }
 
 function inputExponent()
 {
 	display.textContent += "^";
-	invertButtonColor(document.getElementById("main.keyboard.exponent"));
+	invertButtonColor(document.getElementById(exponentId));
 
-	var id = "main.keyboard.exponent";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(exponentId))}, fadeTime);
 }
 
 function inputRoot()
 {
 	display.textContent += "√";
-	invertButtonColor(document.getElementById("main.keyboard.root"));
+	invertButtonColor(document.getElementById(rootId));
 
-	var id = "main.keyboard.root";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(rootId))}, fadeTime);
 }
 
 function inputPi()
 {
 	display.textContent += "Π";
-	invertButtonColor(document.getElementById("main.keyboard.pi"));
+	invertButtonColor(document.getElementById(piId));
 
-	var id = "main.keyboard.pi";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(piId))}, fadeTime);
 }
 
 function inputMod()
 {
 	display.textContent += "%";
-	invertButtonColor(document.getElementById("main.keyboard.mod"));
+	invertButtonColor(document.getElementById(modId));
 
-	var id = "main.keyboard.mod";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(modId))}, fadeTime);
 }
 
 function inputRoot()
 {
 	display.textContent += "√";
-	invertButtonColor(document.getElementById("main.keyboard.root"));
+	invertButtonColor(document.getElementById(rootId));
 
-	var id = "main.keyboard.root";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(rootId))}, fadeTime);
 }
 
 function inputLeftParenthesis()
 {
 	display.textContent += "(";
-	invertButtonColor(document.getElementById("main.keyboard.leftParenthesis"));
+	invertButtonColor(document.getElementById(leftId));
 
-	var id = "main.keyboard.leftParenthesis";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(leftId))}, fadeTime);
 }
 
 function inputRightParenthesis()
 {
 	display.textContent += ")";
-	invertButtonColor(document.getElementById("main.keyboard.rightParenthesis"));
+	invertButtonColor(document.getElementById(rightId));
 
-	var id = "main.keyboard.rightParenthesis";
-	setInterval(function(){resetButtonColor(document.getElementById(id))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(rightId))}, fadeTime);
 }
 
 function cleanString()
