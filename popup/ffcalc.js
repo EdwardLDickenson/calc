@@ -432,11 +432,11 @@ function inputZero()
 function inputEquals()
 {
 	var parsedDisplay = display.textContent;
-	parsedDisplay = parsedDisplay.replace("Π", "(3.14)");	//	Double pi ΠΠ doesn't work because replace all hasn't been implemented
+	parsedDisplay = parsedDisplay.replace(/Π/g, "(3.14)");	//	Double pi ΠΠ doesn't work because replace all hasn't been implemented
 	
 	if(parsedDisplay.includes("√"))
 	{
-		parsedDisplay = parsedDisplay.replace("√", "sqrt(");
+		parsedDisplay = parsedDisplay.replace(/√/g, "sqrt(");
 		parsedDisplay = parsedDisplay + ")"
 		
 		console.log(parsedDisplay);
