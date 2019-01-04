@@ -2,48 +2,65 @@ var display;
 var fadeTime = 800;
 var	pi = 3.14;
 
+//	Button Ids
+var oneId = "main.keyboard.one";
+var twoId = "main.keyboard.two";
+var threeId = "main.keyboard.three";
+var fourId = "main.keyboard.four";
+var fiveId = "main.keyboard.five";
+var sixId = "main.keyboard.six";
+var sevenId = "main.keyboard.seven";
+var eightId = "main.keyboard.eight";
+var nineId = "main.keyboard.nine";
+var zeroId = "main.keyboard.zero";
+var equalsId = "main.keyboard.equals";
+var addId = "main.keyboard.add";
+var subtractId = "main.keyboard.subtract";
+var multiplyId = "main.keyboard.multiply";
+var divideId = "main.keyboard.divide";
+var clearId = "main.keyboard.clear";
+var backId = "main.keyboard.back";
+var factorialId = "main.keyboard.factorial";
+var modId = "main.keyboard.mod";
+var rootId = "main.keyboard.root";
+var piId = "main.keyboard.pi";
+var leftId = "main.keyboard.leftParenthesis";
+var rightId = "main.keyboard.rightParenthesis";
+var exponentId = "main.keyboard.exponent";
+var decimalId = "main.keyboard.decimal";
+
 window.onload = function(){
 	console.log("Onload event");
-
-	//	Consolidate this list
-	//	var parentId = "main.keyboard.";
-	//	var elementList = [parentId + "one", parentId + "two"];
-	//	for(var i = 0; i < elementList.length; ++i)
-	//	{
-	//
-	//	}
-
-	document.getElementById("main.keyboard.one").addEventListener("mousedown", inputOne);
-	document.getElementById("main.keyboard.two").addEventListener("mousedown", inputTwo);
-	document.getElementById("main.keyboard.three").addEventListener("mousedown", inputThree);
-	document.getElementById("main.keyboard.add").addEventListener("mousedown", inputAdd);
-	document.getElementById("main.keyboard.four").addEventListener("mousedown", inputFour);
-	document.getElementById("main.keyboard.five").addEventListener("mousedown", inputFive);
-	document.getElementById("main.keyboard.six").addEventListener("mousedown", inputSix);
-	document.getElementById("main.keyboard.subtract").addEventListener("mousedown", inputSubtract);
-	document.getElementById("main.keyboard.seven").addEventListener("mousedown", inputSeven);
-	document.getElementById("main.keyboard.eight").addEventListener("mousedown", inputEight);
-	document.getElementById("main.keyboard.nine").addEventListener("mousedown", inputNine);
-	document.getElementById("main.keyboard.multiply").addEventListener("mousedown", inputMultiply);
-	document.getElementById("main.keyboard.decimal").addEventListener("mousedown", inputDecimal);
-	document.getElementById("main.keyboard.zero").addEventListener("mousedown", inputZero);
-	document.getElementById("main.keyboard.equals").addEventListener("mousedown", inputEquals);
-	document.getElementById("main.keyboard.divide").addEventListener("mousedown", inputDivide);
-	document.getElementById("main.keyboard.clear").addEventListener("mousedown", clearInput);
-	document.getElementById("main.keyboard.back").addEventListener("mousedown", backInput);
-	document.getElementById("main.keyboard.factorial").addEventListener("mousedown", inputFactorial);
-	document.getElementById("main.keyboard.exponent").addEventListener("mousedown", inputExponent);
-	document.getElementById("main.keyboard.leftParenthesis").addEventListener("mousedown", inputLeftParenthesis);
-	document.getElementById("main.keyboard.rightParenthesis").addEventListener("mousedown", inputRightParenthesis);
-	document.getElementById("main.keyboard.root").addEventListener("mousedown", inputRoot);
-	document.getElementById("main.keyboard.pi").addEventListener("mousedown", inputPi);
-	document.getElementById("main.keyboard.mod").addEventListener("mousedown", inputMod);
-	document.getElementById("main.keyboard.root").addEventListener("mousedown", inputRoot);
+	
+	document.getElementById(oneId).addEventListener("mousedown", inputOne);
+	document.getElementById(twoId).addEventListener("mousedown", inputTwo);
+	document.getElementById(threeId).addEventListener("mousedown", inputThree);
+	document.getElementById(addId).addEventListener("mousedown", inputAdd);
+	document.getElementById(fourId).addEventListener("mousedown", inputFour);
+	document.getElementById(fiveId).addEventListener("mousedown", inputFive);
+	document.getElementById(sixId).addEventListener("mousedown", inputSix);
+	document.getElementById(subtractId).addEventListener("mousedown", inputSubtract);
+	document.getElementById(sevenId).addEventListener("mousedown", inputSeven);
+	document.getElementById(eightId).addEventListener("mousedown", inputEight);
+	document.getElementById(nineId).addEventListener("mousedown", inputNine);
+	document.getElementById(multiplyId).addEventListener("mousedown", inputMultiply);
+	document.getElementById(decimalId).addEventListener("mousedown", inputDecimal);
+	document.getElementById(zeroId).addEventListener("mousedown", inputZero);
+	document.getElementById(equalsId).addEventListener("mousedown", inputEquals);
+	document.getElementById(divideId).addEventListener("mousedown", inputDivide);
+	document.getElementById(clearId).addEventListener("mousedown", clearInput);
+	document.getElementById(backId).addEventListener("mousedown", backInput);
+	document.getElementById(factorialId).addEventListener("mousedown", inputFactorial);
+	document.getElementById(exponentId).addEventListener("mousedown", inputExponent);
+	document.getElementById(leftId).addEventListener("mousedown", inputLeftParenthesis);
+	document.getElementById(rightId).addEventListener("mousedown", inputRightParenthesis);
+	document.getElementById(rootId).addEventListener("mousedown", inputRoot);
+	document.getElementById(piId).addEventListener("mousedown", inputPi);
+	document.getElementById(modId).addEventListener("mousedown", inputMod);
 	
 	setInterval(cleanString, 250);
 
 	display = document.getElementById("main.display");
-	display.focus();
 }
 
 document.onkeydown = function downEvent(e)
