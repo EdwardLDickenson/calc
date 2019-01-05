@@ -32,7 +32,7 @@ var decimalId = "main.keyboard.decimal";
 window.onload = function(){
 	console.log("Onload event");
 	
-	document.getElementById(oneId).addEventListener("mousedown", inputOne);
+	document.getElementById(oneId).addEventListener("mousedown", function(){input(oneId)});
 	document.getElementById(twoId).addEventListener("mousedown", inputTwo);
 	document.getElementById(threeId).addEventListener("mousedown", inputThree);
 	document.getElementById(addId).addEventListener("mousedown", inputAdd);
@@ -129,7 +129,7 @@ document.onkeydown = function downEvent(e)
 	//	'1'	key
 	else if(e.keyCode == 49)
 	{
-		inputOne();
+		input(oneId);
 	}
 
 	// '2' key
@@ -206,7 +206,7 @@ document.onkeydown = function downEvent(e)
 	//	numpad '1'
 	else if(e.keyCode == 97)
 	{
-		inputOne();
+		input(oneId);
 	}
 
 	//	numpad '2'
@@ -320,12 +320,36 @@ function resetButtonColor(button)
 	button.style.setProperty("background-color", "#222222");
 }
 
-function inputOne()
-{
-	display.textContent += "1";
-	invertButtonColor(document.getElementById(ondId));
+var idChars = {};
+idChars[oneId] = "1";
+idChars[twoId] = "2";
+idChars[threeId] = "3";
+idChars[fourId] = "4";
+idChars[fiveId] = "5";
+idChars[sixId] = "6";
+idChars[sevenId] = "7";
+idChars[eightId] = "8";
+idChars[nineId] = "9";
+idChars[zeroId] = "0";
+idChars[addId] = "+";
+idChars[subtractId] = "-";
+idChars[multiplyId] = "*";
+idChars[divideId] = "/";
+idChars[factorialId] = "!";
+idChars[modId] = "%";
+idChars[exponentId] = "^";
+idChars[leftId] = "(";
+idChars[rightId] = ")";
+idChars[rootId] = "√";
+idChars[piId] = "Π";
+idChars[decimalId] = "."
 
-	setInterval(function(){resetButtonColor(document.getElementById(oneId))}, fadeTime);
+function input(buttonId)
+{
+	display.textContent += idChars[buttonId];
+	invertButtonColor(document.getElementById(buttonId));
+
+	setInterval(function(){resetButtonColor(document.getElementById(buttonId))}, fadeTime);
 }
 
 function inputTwo()
@@ -349,7 +373,7 @@ function inputAdd()
 	display.textContent += "+";
 	invertButtonColor(document.getElementById(addId));
 
-	setInterval(function(){resetButtonColor(document.getElementById(AddId))}, fadeTime);
+	setInterval(function(){resetButtonColor(document.getElementById(addId))}, fadeTime);
 }
 
 function inputFour()
