@@ -89,261 +89,209 @@ window.onload = function(){
 
 document.onkeydown = function downEvent(e)
 {
-	//	Backspace key
-	if(e.keyCode == 8)
+	switch(e.keyCode)
 	{
-		//	Clear the last character on the display
-		backInput();
+		//	Backspace key
+		case 8:
+			//	Clear the last character on the display
+			backInput();
 
-		//	Prevent the browser from navigating to the previous page
-		e.preventDefault();
-	}
-
-	//	'=' key
-	else if (e.keyCode == 13)
-	{
-		inputEquals();
-	}
-
-	//	')' key combination
-	else if(e.shiftKey && e.keyCode == 48)
-	{
-		input(leftId);
-		//inputRightParenthesis();
-	}
-	
-	//	'%' key combination
-	else if(e.shiftKey && e.keyCode == 53)
-	{
-		input(modId);
-		//inputMod();
-	}
-
-	//	'0' key
-	else if(e.keyCode == 48)
-	{
-		input(zeroId);
-		//inputZero();
-	}
-
-	//	'!' key combination
-	else if(e.shiftKey && e.keyCode == 49)
-	{
-		input(factorialId);
-		inputFactorial();
-	}
-
-	//	'*' key combination
-	else if(e.shiftKey && e.keyCode == 56)
-	{
-		input(multiplyId);
-		inputMultiply();
-	}
-
-	//	'+' key
-	else if(e.shiftKey && e.keyCode == 61)
-	{
-		input(addId);
-		inputAdd();
-	}
-
-	//	'^' key combination
-	else if(e.shiftKey && e.keyCode == 54)
-	{
-		input(exponentId);
-		inputExponent();
-	}
-
-	//	'(' key combination
-	else if(e.shiftKey && e.keyCode == 57)
-	{
-		input(leftId);
-		inputLeftParenthesis();
-	}
-
-	//	'1'	key
-	else if(e.keyCode == 49)
-	{
-		input(oneId);
-	}
-
-	// '2' key
-	else if(e.keyCode == 50)
-	{
-		input(twoId);
-	}
-
-	//	'3' key
-	else if(e.keyCode == 51)
-	{
-		input(threeId);
-	}
-
-	//	'4' key
-	else if(e.keyCode == 52)
-	{
-		input(fourId);
-	}
-
-	//	'5' key
-	else if(e.keyCode == 53)
-	{
-		input(fiveId);
-	}
-
-	//	'6' key
-	else if(e.keyCode == 54)
-	{
-		input(sixId);
-	}
-
-	//	'7' key
-	else if(e.keyCode == 55)
-	{
-		input(sevenId);
-	}
-
-	//	'8' key
-	else if(e.keyCode == 56)
-	{
-		input(eightId);
-	}
-
-	//	'9' key
-	else if(e.keyCode == 57)
-	{
-		input(nineId);
-	}
-
-	//	'=' key
-	else if(e.keyCode == 61)
-	{
-		inputEquals();
-	}
-
-	//	Key 'c'
-	else if(e.keyCode == 67)
-	{
-		clearInput();
-	}
-
-	else if(e.keyCode == 80)
-	{
-		input(piId);
-	}
-	
-	//	numpad '0'
-	else if(e.keyCode == 96)
-	{
-		input(zeroId);
-	}
-
-	//	numpad '1'
-	else if(e.keyCode == 97)
-	{
-		input(oneId);
-	}
-
-	//	numpad '2'
-	else if(e.keyCode == 98)
-	{
-		input(twoId);
-	}
-
-	//	numpad '3'
-	else if(e.keyCode == 99)
-	{
-		input(threeId);
-	}
-
-	//	numpad '4'
-	else if(e.keyCode == 100)
-	{
-		input(fourId);
-	}
-
-	//	numpad '5'
-	else if(e.keyCode == 101)
-	{
-		input(fiveId);
-	}
-
-	//	numpad '6'
-	else if(e.keyCode == 102)
-	{
-		input(sixId);
-	}
-
-	//	numpad '7'
-	else if(e.keyCode == 103)
-	{
-		input(sevenId);
-	}
-
-	//	numpad '8'
-	else if(e.keyCode == 104)
-	{
-		input(eightId);
-	}
-
-	//	numpad '9'
-	else if(e.keyCode == 105)
-	{
-		input(nineId);
-	}
-
-	//	numpad '*'
-	else if(e.keyCode == 106)
-	{
-		input(multiplyId);
-	}
-
-	//	numpad '.'
-	else if(e.keyCode == 110)
-	{
-		input(decimalId);
-	}
-
-	//	numpad '/'
-	else if(e.keyCode == 111)
-	{
-		//	Override the quick find
-		e.preventDefault();
+			//	Prevent the browser from navigating to the previous page
+			e.preventDefault();
+			break;
+			
+		//	'=' key
+		case 13:
+			inputEquals();
+			break;
+		case 48:
+			//	')' key combination
+			if(e.shiftKey)
+			{
+				input(rightId);
+			}
+			//	'0' key
+			else
+			{
+				input(zeroId);
+			}
+			break;
+		case 49:
+			//	'!' key combination
+			if(e.shiftKey)
+			{
+				input(factorialId);
+			}
+			//	'1' key
+			else
+			{
+				input(oneId);
+			}
+			break;
+		case 53:
+			//	'%' key combination
+			if(e.shiftKey)
+			{
+				input(modId);
+			}
+			//	'5' key
+			else 
+			{
+				input(fiveId);
+			}
+			break;
 		
-		input(divideId);
-	}
-
-	//	numpad '+'
-	else if(e.keyCode == 107)
-	{
-		input(addId);
-		inputAdd();
-	}
-
-	//	numpad '-'
-	else if(e.keyCode == 109)
-	{
-		input(subtractId);
-	}
-
-	//	'-' key
-	else if(e.keyCode == 173)
-	{
-		input(subtractId);
-	}
-
-	//	'.' key
-	else if(e.keyCode == 190)
-	{
-		input(decimalId);
-	}
-
-	//	'/' key
-	else if(e.keyCode == 191)
-	{
-		e.preventDefault();
+		case 56:
+			//	'*' key combination
+			if(e.shiftKey)
+			{
+				input(multiplyId);
+			}
+			//	'8' key
+			else
+			{
+				input(eightId);
+			}
+			break;
+		case 61:
+			//	'+' key combination
+			if(e.shiftKey)
+			{
+				input(addId);
+			}
+			//	Evaluate (no character)
+			else
+			{
+				inputEquals();
+			}
+			break;
+		case 54:
+			//	'^' key combination
+			if(e.shiftKey)
+			{
+				input(exponentId);
+			}
+			//	'6' key
+			else
+			{
+				input(sixId);
+			}
+			break;
+		case 57:
+			//	'(' key combination
+			if(e.shiftKey)
+			{
+				input(leftId);
+			}
+			//	'9' key
+			else
+			{
+				input(nineId);
+			}
+			break;
+		// '2' key
+		case 50:
+			input(twoId);
+			break;
+		//	'3' key
+		case 51:
+			input(threeId);
+			break;
+		//	'4' key
+		case 52:
+			input(fourId);
+			break;
+		//	'7' key
+		case 55:
+			input(sevenId);
+			break;
+		//	'c' key, clear function(no character)
+		case 67:
+			clearInput();
+			break;
+		//	'p'	key, pi variable
+		case 80:
+			input(piId);
+			break;
+		//	numpad '0'
+		case 96:
+			input(zeroId);
+			break;
+		//	numpad '1'
+		case 97:
+			input(oneId);
+			break;
+		//	numpad '2'
+		case 98:
+			input(twoId);
+			break;
+		//	numpad '3'
+		case 99:
+			input(threeId);
+			break;
+		//	numpad '4'
+		case 100:
+			input(fourId);
+			break;
+		//	numpad '5'
+		case 101:
+			input(fiveId);
+			break;
+		//	numpad '6'
+		case 102:
+			input(sixId);
+			break;
+		//	numpad '7'
+		case 103:
+			input(sevenId);
+			break;
+		//	numpad '8'
+		case 104:
+			input(eightId);
+			break;
+		//	numpad '9'
+		case 105:
+			input(nineId);
+			break;
+		//	numpad '*'
+		case 106:
+			input(multiplyId);
+			break;
+		//	numpad '.'
+		case 110:
+			input(decimalId);
+			break;
+		//	numpad '/'
+		case 111:
+			//	Override the quick find
+			e.preventDefault();
+			
+			input(divideId);
+			break;
+		//	numpad '+'
+		case 107:
+			input(addId);
+			inputAdd();
+			break;
+		//	numpad '-'
+		case 109:
+			input(subtractId);
+			break;
+		//	'-' key
+		case 173:
+			input(subtractId);
+			break;
+		//	'.' key
+		case 190:
+			input(decimalId);
+			break;
+		//	'/' key
+		case 191:
+			//	Override the quick find
+			e.preventDefault();
 		
-		input(divideId);
+			input(divideId);
+			break;
 	}
 }
 
