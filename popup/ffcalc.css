@@ -20,21 +20,6 @@ div.smallButton{
 	margin-top: 20%;
 }
 
-div.doubleWidthButton{
-	font-family: monospace;
-	font-size: 400%;
-
-	text-align: center;
-
-	color: #4488ff;
-	background-color: #222222;
-
-	border: 2px solid #4488ff;
-	border-radius: 8px;
-	
-	margin-top: 20%;
-}
-
 div.wide5th{
 	grid-row-start: 1;
 	grid-row-end: 1;
@@ -99,29 +84,8 @@ div.wide3rd{
 
 div.gridContainer{	
 	display: grid;
-	/*grid-template-columns: auto auto auto auto auto auto;*/
 	grid-template-columns: 8ch 8ch 8ch 8ch 8ch 8ch 8ch;
 	grid-gap: .1%;
-}
-
-div.firstSingleCell{
-	clear: both;
-	float: left;
-
-	padding-top: 1%;
-}
-
-div.tallCell{
-	/*float: left;*/
-
-	/*padding-left: 1%;
-	padding-top: 1%;
-	padding-bottom: 0;*/
-}
-
-div.tallCell + div.singleCell{
-	padding-top: 0;
-	background-color: red;
 }
 
 /*	I tried to add a 7-segment font to use in the display.*/
@@ -133,7 +97,6 @@ div.tallCell + div.singleCell{
 
 	border-radius: 8px;
 	border: 2px solid #222222;
-
 
 	text-align: right;
 
