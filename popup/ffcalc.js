@@ -43,8 +43,8 @@ idChars[nineId] = "9";
 idChars[zeroId] = "0";
 idChars[addId] = "+";
 idChars[subtractId] = "-";
-idChars[multiplyId] = "*";
-idChars[divideId] = "/";
+idChars[multiplyId] = "×";
+idChars[divideId] = "÷";
 idChars[factorialId] = "!";
 idChars[modId] = "%";
 idChars[exponentId] = "^";
@@ -308,7 +308,6 @@ function resetButtonColor(button)
 	button.style.setProperty("background-color", "#222222");
 }
 
-//	Replacing '/' with '÷' will take a bit more work since the parser doesn't understand '÷'
 function input(buttonId)
 {
 	display.textContent += idChars[buttonId];
@@ -329,6 +328,9 @@ function inputEquals()
 		
 		console.log(parsedDisplay);
 	}
+	
+	parsedDisplay = parsedDisplay.replace(/÷/g, "/");
+	parsedDisplay = parsedDisplay.replace(/×/g, "*");
 	
 	var result = math.eval(parsedDisplay);
 
