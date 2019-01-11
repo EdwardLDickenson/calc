@@ -312,25 +312,37 @@ function input(buttonId)
 {
 	display.textContent += idChars[buttonId];
 	invertButtonColor(document.getElementById(buttonId));
+	var parsedDisplay = display.textContent.replace(/[,]/g, '');
 
+	var equation = parsedDisplay.split(/[+\-*/Π÷×√!^%()]/g);
+	console.log(equation);
+	
+	//display.textContent = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(parsedDisplay);
+	
+	for(var i = 0; i < equation.length; ++i)
+	{
+		var formatted = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(equation[i]);
+		console.log(formatted);
+	}
+	
 	setInterval(function(){resetButtonColor(document.getElementById(buttonId))}, fadeTime);
 }
 
 function inputEquals()
 {
 	var parsedDisplay = display.textContent;
-	parsedDisplay = parsedDisplay.replace(/Π/g, "(3.14)");
+	parsedDisplay = parsedDisplay.replace(/[Π]/g, "(3.14)");
 	
 	if(parsedDisplay.includes("√"))
 	{
-		parsedDisplay = parsedDisplay.replace(/√/g, "sqrt(");
+		parsedDisplay = parsedDisplay.replace(/[√]/g, "sqrt(");
 		parsedDisplay = parsedDisplay + ")"
 		
 		console.log(parsedDisplay);
 	}
 	
-	parsedDisplay = parsedDisplay.replace(/÷/g, "/");
-	parsedDisplay = parsedDisplay.replace(/×/g, "*");
+	parsedDisplay = parsedDisplay.replace(/[÷]/g, "/");
+	parsedDisplay = parsedDisplay.replace(/[×]/g, "*");
 	
 	var result = math.eval(parsedDisplay);
 
@@ -370,7 +382,7 @@ function cleanString()
 	var display = document.getElementById("main.display");
 
 	//	Not necessary?
-	display.innerHTML = display.innerHTML.replace(/[a-zA-Z\[\]\{\} ,~`@#$&_?;|\\]/g, '');
+	display.innerHTML = display.innerHTML.replace(/[a-zA-Z\[\]\{\} ~`@#$&_?;|\\]/g, '');
 
 	//	This eliminates any double operators like ++ or //.  Factorial is intentionally omitted because double factorials are a thing
 	display.textContent = display.textContent.replace(/[+]{2,}/g, '+');
@@ -379,6 +391,8 @@ function cleanString()
 	display.textContent = display.textContent.replace(/[/]{2,}/g, '/');
 	display.textContent = display.textContent.replace(/[.]{2,}/g, '.');
 	display.textContent = display.textContent.replace(/[%]{2,}/g, '%');
+	
+	//display.textContent = display.textContent.replace(/[0-9]{3}/g, /[0-9]{3}/g);
 }
 
 
