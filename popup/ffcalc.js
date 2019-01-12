@@ -314,16 +314,19 @@ function input(buttonId)
 	invertButtonColor(document.getElementById(buttonId));
 	var parsedDisplay = display.textContent.replace(/[,]/g, '');
 
-	var equation = parsedDisplay.split(/[+\-*/Π÷×√!^%()]/g);
-	console.log(equation);
+	var figures = parsedDisplay.split(/[+\-*/Π÷×√!^%().]/g);
 	
-	//display.textContent = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(parsedDisplay);
-	
-	for(var i = 0; i < equation.length; ++i)
+	for(var i = 0; i < figures.length; ++i)
 	{
-		var formatted = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(equation[i]);
-		console.log(formatted);
+		var formatted = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(parseInt(figures[i]), 10);
+		
+		console.log("Before: " + figures[i]);
+		console.log(figures[i].length);
+		console.log("After: " + formatted);
+		parsedDisplay = parsedDisplay.replace(figures[i], formatted);
 	}
+	
+	display.textContent = parsedDisplay;
 	
 	setInterval(function(){resetButtonColor(document.getElementById(buttonId))}, fadeTime);
 }
@@ -331,6 +334,7 @@ function input(buttonId)
 function inputEquals()
 {
 	var parsedDisplay = display.textContent;
+	parsedDisplay = parsedDisplay.replace(/[,]/g, "");
 	parsedDisplay = parsedDisplay.replace(/[Π]/g, "(3.14)");
 	
 	if(parsedDisplay.includes("√"))
