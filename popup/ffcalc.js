@@ -82,8 +82,6 @@ window.onload = function(){
 	document.getElementById(rootId).addEventListener("mousedown", function(){input(rootId)});
 	document.getElementById(piId).addEventListener("mousedown", function(){input(piId)});
 	document.getElementById(modId).addEventListener("mousedown", function(){input(modId)});
-	
-	setInterval(cleanString, 250);
 
 	display = document.getElementById("main.display");
 }
@@ -318,15 +316,26 @@ function input(buttonId)
 	
 	for(var i = 0; i < figures.length; ++i)
 	{
-		var formatted = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(parseInt(figures[i]), 10);
-		
-		console.log("Before: " + figures[i]);
-		console.log(figures[i].length);
-		console.log("After: " + formatted);
-		parsedDisplay = parsedDisplay.replace(figures[i], formatted);
+		if(figures[i].length != 0)
+		{
+			var formatted = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(parseInt(figures[i]), 10);
+			
+			parsedDisplay = parsedDisplay.replace(figures[i], formatted);
+		}
 	}
 	
 	display.textContent = parsedDisplay;
+	
+	//	Clean characters which are not used as operators
+	display.innerHTML = display.innerHTML.replace(/[a-zA-Z\[\]\{\} ~`@#$&_?;|\\]/g, '');
+	
+	//	This eliminates any double operators like ++ or //.  Factorial is intentionally omitted because double factorials are a thing
+	display.textContent = display.textContent.replace(/[+]{2,}/g, '+');
+	display.textContent = display.textContent.replace(/[-]{2,}/g, '-');
+	display.textContent = display.textContent.replace(/[×]{2,}/g, '×');
+	display.textContent = display.textContent.replace(/[÷]{2,}/g, '÷');
+	display.textContent = display.textContent.replace(/[.]{2,}/g, '.');
+	display.textContent = display.textContent.replace(/[%]{2,}/g, '%');
 	
 	setInterval(function(){resetButtonColor(document.getElementById(buttonId))}, fadeTime);
 }
@@ -357,11 +366,10 @@ function inputEquals()
 
 	else
 	{
-		display.textContent = result;
+		display.textContent = new Intl.NumberFormat('en', {maximumSignificantDigits: 18}).format(parseInt(result), 10);
 	}
 
 	invertButtonColor(document.getElementById(equalsId));
-
 	setInterval(function(){resetButtonColor(document.getElementById(equalsId))}, fadeTime);
 }
 
@@ -369,7 +377,6 @@ function clearInput()
 {
 	display.textContent = "";
 	invertButtonColor(document.getElementById(clearId));
-
 	setInterval(function(){resetButtonColor(document.getElementById(clearId))}, fadeTime);
 }
 
@@ -377,26 +384,7 @@ function backInput()
 {
 	display.textContent = display.textContent.substring(0, display.textContent.length - 1)
 	invertButtonColor(document.getElementById(backId));
-
 	setInterval(function(){resetButtonColor(document.getElementById(backId))}, fadeTime);
-}
-
-function cleanString()
-{
-	var display = document.getElementById("main.display");
-
-	//	Not necessary?
-	display.innerHTML = display.innerHTML.replace(/[a-zA-Z\[\]\{\} ~`@#$&_?;|\\]/g, '');
-
-	//	This eliminates any double operators like ++ or //.  Factorial is intentionally omitted because double factorials are a thing
-	display.textContent = display.textContent.replace(/[+]{2,}/g, '+');
-	display.textContent = display.textContent.replace(/[-]{2,}/g, '-');
-	display.textContent = display.textContent.replace(/[*]{2,}/g, '*');
-	display.textContent = display.textContent.replace(/[/]{2,}/g, '/');
-	display.textContent = display.textContent.replace(/[.]{2,}/g, '.');
-	display.textContent = display.textContent.replace(/[%]{2,}/g, '%');
-	
-	//display.textContent = display.textContent.replace(/[0-9]{3}/g, /[0-9]{3}/g);
 }
 
 
