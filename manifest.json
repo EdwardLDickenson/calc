@@ -9,6 +9,7 @@
 	},
 
 	"permissions": [
+		"storage"
 	],
 
 	"browser_action": {
@@ -19,9 +20,13 @@
 		"default_popup": "popup/ffcalc.html"
 	},
 
+	"options_ui": {
+		"page": "settings/settings.html"
+	},
+	
 	"applications": {
 		"gecko": {
-			"id": "quicknote-example@mozilla.org"
+			"id": "ffcalc@mozilla.org"
 		}
 	}
 }
