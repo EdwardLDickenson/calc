@@ -1,0 +1,132 @@
+:root{
+	--foregroundColor: #4488ff;
+	--backgroundColor: #222222;
+}
+
+body{
+	font-family: monospace;
+	font-size: 100%;
+
+	color: var(--foregroundColor);
+	background-color: var(--backgroundColor);
+}
+
+div.smallButton{
+	font-family: monospace;
+	font-size: 400%;
+
+	text-align: center;
+
+	color: var(--foregroundColor);
+	background-color: var(--backgroundColor);
+
+	border: 2px solid var(--foregroundColor);
+	border-radius: 8px;
+	
+	margin-top: 20%;
+	
+	-moz-user-select: none;
+}
+
+div.wide5th{
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 5;
+	grid-column-end: 7;
+	
+	height: 100%
+	
+	font-family: monospace;
+	font-size: 400%;
+
+	text-align: center;
+
+	color: var(--foregroundColor);
+	background-color: var(--backgroundColor);
+
+	border: 2px solid var(--foregroundColor);
+	border-radius: 8px;
+	
+	margin-top: 10%;
+	
+	-moz-user-select: none;
+}
+
+div.tall4th{
+	grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 4;
+	grid-column-end: 4;
+	
+	font-family: monospace;
+	font-size: 400%;
+
+	text-align: center;
+
+	color: var(--foregroundColor);
+	background-color: var(--backgroundColor);
+
+	border: 2px solid var(--foregroundColor);
+	border-radius: 8px;
+	
+	margin-top: 20%;
+	
+	-moz-user-select: none;
+}
+
+div.wide3rd{
+	grid-row-start: 4;
+	grid-row-end: 4;
+	grid-column-start: 3;
+	grid-column-end: 5;
+	
+	font-family: monospace;
+	font-size: 400%;
+
+	text-align: center;
+
+	color: var(--foregroundColor);
+	background-color: var(--backgroundColor);
+
+	border: 2px solid var(--foregroundColor);
+	border-radius: 8px;
+	
+	margin-top: 10%;
+	
+	-moz-user-select: none;
+}
+
+div.gridContainer{	
+	display: grid;
+	grid-template-columns: 8ch 8ch 8ch 8ch 8ch 8ch 8ch;
+	grid-gap: .1%;
+}
+
+/*	I tried to add a 7-segment font to use in the display.*/
+.calcDisplay{
+	font-family: monospace;
+	
+	color: var(--backgroundColor);
+	background-color: var(--foregroundColor);
+
+	border-radius: 8px;
+	border: 2px solid var(--backgroundColor);
+
+	text-align: right;
+
+	width: 16.05ch;
+	height: 2ch;
+}
+
+.outerDisplay{
+	font-family: monospace;
+	font-size: 400%;
+
+	border: 2px solid var(--foregroundColor);
+	border-radius: 8px;
+
+	width: 16.15ch;
+}
+
+
+
