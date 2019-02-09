@@ -54,8 +54,115 @@ idChars[rootId] = "√";
 idChars[piId] = "Π";
 idChars[decimalId] = "."
 
+function getColorAndChangeStyle(){
+	//var fgRedVal = parseInt(document.getElementById("fgRed", 10).value).toString(16);
+	var fgRedVal
+	if(parseInt(document.getElementById("fgRed", 10).value) < 15)
+	{
+		console.log("This is the zero case");
+		fgRedVal = "0" + fgRedVal;
+	}
+	//var fgGreenVal = parseInt(document.getElementById("fgGreen", 10).value).toString(16);
+	if(parseInt(document.getElementById("fgGreen", 10).value) < 15)
+	{
+		fgGreenVal = "0" + fgGreenVal;
+	}
+	//var fgBlueVal = parseInt(document.getElementById("fgBlue", 10).value).toString(16);
+	if(parseInt(document.getElementById("fgBlue", 10).value) < 15)
+	{
+		fgBlueVal = "0" + fgBlueVal;
+	}
+	//var bgRedVal = parseInt(document.getElementById("bgRed", 10).value).toString(16);
+	if(parseInt(document.getElementById("bgRed", 10).value) < 15)
+	{
+		bgRedVal = "0" + bgRedVal;
+	}
+	//var bgGreenVal = parseInt(document.getElementById("bgGreen", 10).value).toString(16);
+	if(parseInt(document.getElementById("bgGreen", 10).value) < 15)
+	{
+		bgGreenVal = "0" + bgGreenVal;
+	}
+	//var bgBlueVal = parseInt(document.getElementById("bgBlue", 10).value).toString(16);
+	if(parseInt(document.getElementById("bgBlue", 10).value) < 15)
+	{
+		bgBlueVal = "0" + bgBlueVal;
+	}
+	
+	document.documentElement.style.setProperty("--foregroundColor", "#" + fgRedVal + fgGreenVal + fgBlueVal);
+	document.documentElement.style.setProperty("--backgroundColor", "#" + bgRedVal + bgGreenVal + bgBlueVal);
+}
+
+function gotten(item, id, preset){
+	/*fields[id] = item[id];
+	var result = fields[id];
+	
+	if(item[id] == undefined || item[id] == "undefined")
+	{
+		result = preset;
+		saveColor(id, preset);
+	}
+	
+	document.getElementById(id).value = result;
+	
+	result = result;
+	
+	document.getElementById(id + "Slider").value = result;
+	getColorAndChangeStyle();*/
+	
+	//var fgRedVal = parseInt(document.getElementById("fgRed", 10).value).toString(16);
+	var fgRedVal = item[id];
+	if(parseInt(document.getElementById("fgRed", 10).value) < 15)
+	{
+		console.log("This is the zero case");
+		fgRedVal = "0" + fgRedVal;
+	}
+	//var fgGreenVal = parseInt(document.getElementById("fgGreen", 10).value).toString(16);
+	var fgGreenVal =
+	if(parseInt(document.getElementById("fgGreen", 10).value) < 15)
+	{
+		fgGreenVal = "0" + fgGreenVal;
+	}
+	//var fgBlueVal = parseInt(document.getElementById("fgBlue", 10).value).toString(16);
+	var fgBlueVal =
+	if(parseInt(document.getElementById("fgBlue", 10).value) < 15)
+	{
+		fgBlueVal = "0" + fgBlueVal;
+	}
+	//var bgRedVal = parseInt(document.getElementById("bgRed", 10).value).toString(16);
+	var bgRedVal =
+	if(parseInt(document.getElementById("bgRed", 10).value) < 15)
+	{
+		bgRedVal = "0" + bgRedVal;
+	}
+	//var bgGreenVal = parseInt(document.getElementById("bgGreen", 10).value).toString(16);
+	var bgGreenVal =
+	if(parseInt(document.getElementById("bgGreen", 10).value) < 15)
+	{
+		bgGreenVal = "0" + bgGreenVal;
+	}
+	//var bgBlueVal = parseInt(document.getElementById("bgBlue", 10).value).toString(16);
+	var bgBlueVal =
+	if(parseInt(document.getElementById("bgBlue", 10).value) < 15)
+	{
+		bgBlueVal = "0" + bgBlueVal;
+	}
+	
+	document.documentElement.style.setProperty("--foregroundColor", "#" + fgRedVal + fgGreenVal + fgBlueVal);
+	document.documentElement.style.setProperty("--backgroundColor", "#" + bgRedVal + bgGreenVal + bgBlueVal);
+}
+
+
 window.onload = function(){
-	console.log("Onload event");
+	
+	browser.storage.sync.get("fgRed").then(function(item){gotten(item, "fgRed", "68");}, getErr);
+	browser.storage.sync.get("fgGreen").then(function(item){gotten(item, "fgGreen", "136");}, getErr);
+	browser.storage.sync.get("fgBlue").then(function(item){gotten(item, "fgBlue", "255");}, getErr);
+	browser.storage.sync.get("bgRed").then(function(item){gotten(item, "bgRed", "34");}, getErr);
+	browser.storage.sync.get("bgGreen").then(function(item){gotten(item, "bgGreen", "34");}, getErr);
+	browser.storage.sync.get("bgBlue").then(function(item){gotten(item, "bgBlue", "34");}, getErr);
+	browser.storage.sync.get("displaySize").then(function(item){gotten(item, "displaySize", "15");}, getErr);
+	browser.storage.sync.get("useCommas").then(function(item){getCheckboxValue(item, "useCommas")}, getErr);
+	
 	
 	document.getElementById(oneId).addEventListener("mousedown", function(){input(oneId)});
 	document.getElementById(twoId).addEventListener("mousedown", function(){input(twoId)});
@@ -390,7 +497,6 @@ function backInput()
 
 
 //	TODO:
-//	The root doesn't work without changing √ to sqrt() for the parser.
 //
 //
 //
